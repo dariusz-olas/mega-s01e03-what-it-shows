@@ -1,6 +1,6 @@
 ---
 layout: runbook
-title: '#4471 · what the table shows vs what intake told'
+title: '#4471 · three problems under one known'
 owner: Dariusz Olas
 status: draft
 reviewed: 2026-11-07
@@ -13,26 +13,38 @@ signature: Dariusz Olas
   import RenderStamp from '#lib/kb/RenderStamp.svelte';
 </script>
 
-Ticket **#4471** was marked known as one parser bug. The export shows two real causes, and intake tags that disagree with those causes.
+Ticket **#4471** was marked known as one parser bug. The export shows **two causes** plus desk notes that read five reports as a **one-day move**.
 
-## Problems (desk count = what intake told)
+## Problems
 
-1. **parser** — **371** reports with `intakeTag: parser`.
-2. **hint** — **41** reports with `intakeTag: hint`.
-
-CauseTable `causeOf` instead groups **379** / **33**. The desk closed #4471 on **412** reports.
+1. **parser** — **379** reports. Day-first tenants; the shared parser reads month first.
+2. **hint** — **33** reports. Day-first tenants on **booking-v3**: the form prints `MM/DD/YYYY` while it still reads day first.
+3. **one-day move** — **5** reports (`desk-notes.json`). One-day shift, not a month flip.
 
 <Callout>
-You count what the table shows. The desk counted what it got told.
+Do not trust intakeTag. Cause comes from the tenant (locale and form). A matching subject is not the same problem.
 </Callout>
 
 ## What the table shows
 
 <CauseTable ticket={4471} />
 
+## Where each one stands
+
+#4471 closed on 5 October with two outcomes. They cover two of the three problems.
+
+| problem | outcome | ticket |
+| --- | --- | --- |
+| `parser` | fixed: parse dd/mm for eu locales | closed (completed) |
+| `hint` | won't fix: booking-v3 form retired | closed (not planned) |
+| `one-day move` | nothing yet | **open** |
+
+Closing #4471 did not close the one-day move. Neither fix touches it.
+
 ## Tickets filed
 
-- parser — 371 reports
-- hint — 41 reports
+- parser — 379 reports
+- hint — 33 reports
+- one-day move — 5 reports
 
 <RenderStamp signature="Dariusz Olas" />

@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>#4471 · two causes and a one-day move</title>
+  <title>#4471 · three problems under one known</title>
   <style>
-    body { font: 16px/1.5 system-ui, sans-serif; max-width: 44rem; margin: 2rem auto; padding: 0 1rem; color: #1a1a1a; }
+    body { font: 16px/1.5 system-ui, sans-serif; max-width: 44rem; margin: 2rem auto; padding: 0 1rem; }
     code { font-family: ui-monospace, monospace; }
     table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
     th, td { border: 1px solid #ccc; padding: 0.4rem 0.6rem; text-align: left; }
@@ -12,61 +12,41 @@
     tr.wrong td { background: #fff4e5; }
     .callout { border-left: 4px solid #c45; padding: 0.75rem 1rem; background: #faf7f5; margin: 1rem 0; }
     .stamp { margin: 2rem 0 0; font: 0.85rem ui-monospace, monospace; color: #666; }
-    .stamp b { color: #c45; letter-spacing: 0.04em; }
+    .stamp b { color: #c45; }
     .muted { color: #666; font-size: 0.85em; }
-    .sum { font-size: 1.1rem; }
   </style>
 </head>
 <body>
   <p class="muted">kb · incidents · desk view</p>
-  <h1>#4471 · two causes and a one-day move</h1>
-  <p class="muted">owner: Dariusz Olas · status: draft · reviewed: 2026-11-07</p>
-
-  <p>Ticket <strong>#4471</strong> was marked known as one parser bug. The export shows <strong>two causes</strong> merged into that ticket, plus desk notes that read five reports as a <strong>one-day move</strong>.</p>
-
+  <h1>#4471 · three problems under one known</h1>
+  <p class="muted">owner: Dariusz Olas · desk ref DR-PMKC-2RN6</p>
+  <p>Ticket <strong>#4471</strong> was marked known as one parser bug. The export shows two causes plus five one-day-move notes.</p>
   <h2>Problems</h2>
   <ol>
-    <li><strong>parser</strong> — <strong>374</strong> reports. Day-first tenants; the shared parser reads month first.</li>
-    <li><strong>hint</strong> — <strong>33</strong> reports. Day-first tenants on <strong>booking-v3</strong>: the form prints <code>MM/DD/YYYY</code> while it still reads day first.</li>
-    <li><strong>one-day move</strong> — <strong>5</strong> reports from desk notes: one-day shift, not a month flip.</li>
+    <li><strong>parser</strong> — <strong>379</strong> reports</li>
+    <li><strong>hint</strong> — <strong>33</strong> reports</li>
+    <li><strong>one-day move</strong> — <strong>5</strong> reports</li>
   </ol>
-
-  <div class="callout">Split #4471. Counts from unique report ids (412 total): 374 + 33 + 5.</div>
-
-  <h2>What the table shows</h2>
-  <p class="sum"><strong>412</strong> reports merged into #4471 · <strong>2</strong> causes</p>
+  <div class="callout">Do not trust intakeTag. Cause comes from the tenant. A matching subject is not the same problem.</div>
+  <p><strong>412</strong> reports merged into #4471 · <strong>2</strong> causes</p>
   <table>
-    <thead>
-      <tr><th>cause</th><th>reports</th><th>tagged as</th><th>tenants</th><th>seen</th><th></th></tr>
-    </thead>
+    <thead><tr><th>cause</th><th>reports</th><th></th></tr></thead>
     <tbody>
-      <tr>
-        <td><code>parser</code></td>
-        <td>379</td>
-        <td class="muted">parser ×356 · hint ×23</td>
-        <td>11</td>
-        <td>2026-04-01 → 2026-10-04</td>
-        <td>#4471</td>
-      </tr>
-      <tr class="wrong">
-        <td><code>hint</code></td>
-        <td>33</td>
-        <td class="muted">hint ×18 · parser ×15</td>
-        <td>3</td>
-        <td>2026-04-17 → 2026-09-22</td>
-        <td>not this ticket — no ticket of its own</td>
-      </tr>
+      <tr><td><code>parser</code></td><td>379</td><td>#4471</td></tr>
+      <tr class="wrong"><td><code>hint</code></td><td>33</td><td>not this ticket — no ticket of its own</td></tr>
     </tbody>
   </table>
-  <p class="muted">5 reports read as a one-day move; filed under <code>parser</code> by tenant.</p>
-
-  <h2>Tickets filed</h2>
-  <ul>
-    <li>parser — 374 reports</li>
-    <li>hint — 33 reports</li>
-    <li>one-day move — 5 reports</li>
-  </ul>
-
+  <p class="muted">5 reports read as a one-day move; filed under parser by tenant.</p>
+  <h2>Where each one stands</h2>
+  <p>#4471 closed on 5 October with two outcomes. They cover two of the three problems.</p>
+  <table>
+    <thead><tr><th>problem</th><th>outcome</th><th>ticket</th></tr></thead>
+    <tbody>
+      <tr><td><code>parser</code></td><td>fixed: parse dd/mm for eu locales</td><td>closed (completed)</td></tr>
+      <tr><td><code>hint</code></td><td>won't fix: booking-v3 form retired</td><td>closed (not planned)</td></tr>
+      <tr><td><code>one-day move</code></td><td>nothing yet</td><td><strong>open</strong></td></tr>
+    </tbody>
+  </table>
   <p class="stamp">desk ref <b>DR-PMKC-2RN6</b></p>
 </body>
 </html>
