@@ -2,9 +2,9 @@
 layout: runbook
 title: '#4471 · three problems under one known'
 owner: Dariusz Olas
-status: draft
+status: open
 reviewed: 2026-11-07
-signature: Dariusz Olas
+signature: v1.eyJzdWIiOiI4MzciLCJhdWQiOiJjaGFsbGVuZ2U6d2hhdC1pdC1zaG93cyIsImlhdCI6MTc5NDAyMTI1NywiZXhwIjoxNzk0MTA3NjU3fQ.Djc_N4PICLMF51EtmtC2D1w9qz3G-AzAnM3S2INRlVo
 ---
 
 <script>
@@ -35,7 +35,7 @@ Do not trust intakeTag. Cause comes from the tenant (locale and form). A matchin
 
 | problem | outcome | ticket |
 | --- | --- | --- |
-| `parser` | fixed: parse dd/mm for eu locales | closed (completed) |
+| `parser` | fixed: `fix(dates): parse dd/mm for eu locales` | closed (completed) |
 | `hint` | won't fix: booking-v3 form retired | closed (not planned) |
 | `one-day move` | nothing yet | **open** |
 
@@ -47,4 +47,4 @@ Closing #4471 did not close the one-day move. Neither fix touches it.
 - hint — 33 reports
 - one-day move — 5 reports
 
-<RenderStamp signature="Dariusz Olas" />
+<RenderStamp signature="v1.eyJzdWIiOiI4MzciLCJhdWQiOiJjaGFsbGVuZ2U6d2hhdC1pdC1zaG93cyIsImlhdCI6MTc5NDAyMTI1NywiZXhwIjoxNzk0MTA3NjU3fQ.Djc_N4PICLMF51EtmtC2D1w9qz3G-AzAnM3S2INRlVo" />
