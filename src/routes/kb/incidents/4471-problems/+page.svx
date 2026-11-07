@@ -1,6 +1,6 @@
 ---
 layout: runbook
-title: '#4471 · two problems under one known'
+title: '#4471 · two causes and a one-day move'
 owner: Dariusz Olas
 status: draft
 reviewed: 2026-11-07
@@ -13,17 +13,16 @@ signature: Dariusz Olas
   import RenderStamp from '#lib/kb/RenderStamp.svelte';
 </script>
 
-Ticket **#4471** was marked known as one parser bug. The export shows **two causes** merged into that ticket.
+Ticket **#4471** was marked known as one parser bug. The export shows **two causes** merged into that ticket, plus desk notes that read five reports as a **one-day move**.
 
 ## Problems
 
-1. **parser** — **379** reports. Day-first tenants; the shared parser reads month first, so bookings land on the wrong day.
-2. **hint** — **33** reports. Day-first tenants on **booking-v3**: the form prints `MM/DD/YYYY` while it still reads day first. That is a different bug from the shared parser.
-
-Five more reports were footnoted as a one-day move; by tenant they still sit under `parser`, not a third cause.
+1. **parser** — **374** reports. Day-first tenants; the shared parser reads month first.
+2. **hint** — **33** reports. Day-first tenants on **booking-v3**: the form prints `MM/DD/YYYY` while it still reads day first.
+3. **one-day move** — **5** reports (`desk-notes.json`). The desk read these as a one-day shift (wrong weekday, June-only off-by-one, or timezone pair), not a month flip.
 
 <Callout>
-Split #4471: one ticket per cause. Counts from unique report ids in the export (412 total).
+Split #4471. Counts from unique report ids (412 total): 374 + 33 + 5.
 </Callout>
 
 ## What the table shows
@@ -32,7 +31,8 @@ Split #4471: one ticket per cause. Counts from unique report ids in the export (
 
 ## Tickets filed
 
-- parser — 379 reports
+- parser — 374 reports
 - hint — 33 reports
+- one-day move — 5 reports
 
 <RenderStamp signature="Dariusz Olas" />
