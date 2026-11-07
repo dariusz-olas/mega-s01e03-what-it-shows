@@ -1,0 +1,38 @@
+---
+layout: runbook
+title: '#4471 · two problems under one known'
+owner: Dariusz Olas
+status: draft
+reviewed: 2026-11-07
+signature: Dariusz Olas
+---
+
+<script>
+  import CauseTable from '#lib/kb/CauseTable.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+Ticket **#4471** was marked known as one parser bug. The export shows **two causes** merged into that ticket.
+
+## Problems
+
+1. **parser** — **379** reports. Day-first tenants; the shared parser reads month first, so bookings land on the wrong day.
+2. **hint** — **33** reports. Day-first tenants on **booking-v3**: the form prints `MM/DD/YYYY` while it still reads day first. That is a different bug from the shared parser.
+
+Five more reports were footnoted as a one-day move; by tenant they still sit under `parser`, not a third cause.
+
+<Callout>
+Split #4471: one ticket per cause. Counts from unique report ids in the export (412 total).
+</Callout>
+
+## What the table shows
+
+<CauseTable ticket={4471} />
+
+## Tickets filed
+
+- parser — 379 reports
+- hint — 33 reports
+
+<RenderStamp signature="Dariusz Olas" />
