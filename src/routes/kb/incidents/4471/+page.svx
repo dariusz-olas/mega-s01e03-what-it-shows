@@ -2,8 +2,8 @@
 layout: runbook
 title: '#4471 · dates parse mm/dd in eu locales'
 owner: support desk
-status: known
-reviewed: 2026-09-30
+status: open
+reviewed: 2026-11-07
 ---
 
 <script>
@@ -15,11 +15,11 @@ reviewed: 2026-09-30
 Since April, people have told us their bookings land on the wrong day: a month flipped. By
 4 October the desk had **412 reports**.
 
-**Merged as one issue.** The parser reads dates month first, and our tenants write the day
-first. The fix is queued.
+**Merged as one issue — that was wrong.** The export shows **two causes** under this ticket:
+`parser` (379) and `hint` (33). See [two problems under one known](/kb/incidents/4471-problems).
 
 <Callout>
-Known. One issue, one fix queued.
+Not one known bug. Split into one ticket per cause before the fix queue.
 </Callout>
 
 ## What was merged
@@ -32,5 +32,5 @@ Known. One issue, one fix queued.
 
 ## Lessons
 
-- A big ticket is mostly one bug reported many times. Merge early, count once.
+- A big ticket can hide more than one cause. Read what the table shows before you mark it known.
 - Write the page while the queue is still in your head.
