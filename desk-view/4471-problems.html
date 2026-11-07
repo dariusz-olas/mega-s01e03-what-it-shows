@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>#4471 · two problems under one known</title>
+  <title>#4471 · two causes and a one-day move</title>
   <style>
     body { font: 16px/1.5 system-ui, sans-serif; max-width: 44rem; margin: 2rem auto; padding: 0 1rem; color: #1a1a1a; }
     code { font-family: ui-monospace, monospace; }
@@ -19,19 +19,19 @@
 </head>
 <body>
   <p class="muted">kb · incidents · desk view</p>
-  <h1>#4471 · two problems under one known</h1>
+  <h1>#4471 · two causes and a one-day move</h1>
   <p class="muted">owner: Dariusz Olas · status: draft · reviewed: 2026-11-07</p>
 
-  <p>Ticket <strong>#4471</strong> was marked known as one parser bug. The export shows <strong>two causes</strong> merged into that ticket.</p>
+  <p>Ticket <strong>#4471</strong> was marked known as one parser bug. The export shows <strong>two causes</strong> merged into that ticket, plus desk notes that read five reports as a <strong>one-day move</strong>.</p>
 
   <h2>Problems</h2>
   <ol>
-    <li><strong>parser</strong> — <strong>379</strong> reports. Day-first tenants; the shared parser reads month first, so bookings land on the wrong day.</li>
-    <li><strong>hint</strong> — <strong>33</strong> reports. Day-first tenants on <strong>booking-v3</strong>: the form prints <code>MM/DD/YYYY</code> while it still reads day first. That is a different bug from the shared parser.</li>
+    <li><strong>parser</strong> — <strong>374</strong> reports. Day-first tenants; the shared parser reads month first.</li>
+    <li><strong>hint</strong> — <strong>33</strong> reports. Day-first tenants on <strong>booking-v3</strong>: the form prints <code>MM/DD/YYYY</code> while it still reads day first.</li>
+    <li><strong>one-day move</strong> — <strong>5</strong> reports from desk notes: one-day shift, not a month flip.</li>
   </ol>
-  <p>Five more reports were footnoted as a one-day move; by tenant they still sit under <code>parser</code>, not a third cause.</p>
 
-  <div class="callout">Split #4471: one ticket per cause. Counts from unique report ids in the export (412 total).</div>
+  <div class="callout">Split #4471. Counts from unique report ids (412 total): 374 + 33 + 5.</div>
 
   <h2>What the table shows</h2>
   <p class="sum"><strong>412</strong> reports merged into #4471 · <strong>2</strong> causes</p>
@@ -62,8 +62,9 @@
 
   <h2>Tickets filed</h2>
   <ul>
-    <li>parser — 379 reports</li>
+    <li>parser — 374 reports</li>
     <li>hint — 33 reports</li>
+    <li>one-day move — 5 reports</li>
   </ul>
 
   <p class="stamp">desk ref <b>DR-PMKC-2RN6</b></p>
