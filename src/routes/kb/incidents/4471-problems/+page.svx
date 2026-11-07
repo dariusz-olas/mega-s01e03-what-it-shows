@@ -1,6 +1,6 @@
 ---
 layout: runbook
-title: '#4471 · two causes and a one-day move'
+title: '#4471 · what the table shows vs what intake told'
 owner: Dariusz Olas
 status: draft
 reviewed: 2026-11-07
@@ -13,16 +13,17 @@ signature: Dariusz Olas
   import RenderStamp from '#lib/kb/RenderStamp.svelte';
 </script>
 
-Ticket **#4471** was marked known as one parser bug. The export shows **two causes** merged into that ticket, plus desk notes that read five reports as a **one-day move**.
+Ticket **#4471** was marked known as one parser bug. The export shows two real causes, and intake tags that disagree with those causes.
 
-## Problems
+## Problems (desk count = what intake told)
 
-1. **parser** — **374** reports. Day-first tenants; the shared parser reads month first.
-2. **hint** — **33** reports. Day-first tenants on **booking-v3**: the form prints `MM/DD/YYYY` while it still reads day first.
-3. **one-day move** — **5** reports (`desk-notes.json`). The desk read these as a one-day shift (wrong weekday, June-only off-by-one, or timezone pair), not a month flip.
+1. **parser** — **371** reports with `intakeTag: parser`.
+2. **hint** — **41** reports with `intakeTag: hint`.
+
+CauseTable `causeOf` instead groups **379** / **33**. The desk closed #4471 on **412** reports.
 
 <Callout>
-Split #4471. Counts from unique report ids (412 total): 374 + 33 + 5.
+You count what the table shows. The desk counted what it got told.
 </Callout>
 
 ## What the table shows
@@ -31,8 +32,7 @@ Split #4471. Counts from unique report ids (412 total): 374 + 33 + 5.
 
 ## Tickets filed
 
-- parser — 374 reports
-- hint — 33 reports
-- one-day move — 5 reports
+- parser — 371 reports
+- hint — 41 reports
 
 <RenderStamp signature="Dariusz Olas" />
